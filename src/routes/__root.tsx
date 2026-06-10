@@ -79,10 +79,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "AFRINOVERSE is a future-focused African innovation ecosystem building platforms, products and programmes across education, technology, enterprise and innovation.",
       },
-      { property: "og:title", content: "AFRINOVERSE" },
-      { property: "og:description", content: "Educate. Innovate. Empower." },
+      { property: "og:title", content: "AFRINOVERSE — Building Systems for Africa's Next Generation" },
+      { property: "og:description", content: "AFRINOVERSE is a modern African innovation ecosystem website showcasing its vision, products, and initiatives." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "AFRINOVERSE — Building Systems for Africa's Next Generation" },
+      { name: "description", content: "AFRINOVERSE is a modern African innovation ecosystem website showcasing its vision, products, and initiatives." },
+      { name: "twitter:description", content: "AFRINOVERSE is a modern African innovation ecosystem website showcasing its vision, products, and initiatives." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5e31c9fc-264a-456c-8caa-3ec212713dca/id-preview-f807d30e--1d3814d6-6e81-4e1c-98b4-376c6bd4644e.lovable.app-1780058950282.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5e31c9fc-264a-456c-8caa-3ec212713dca/id-preview-f807d30e--1d3814d6-6e81-4e1c-98b4-376c6bd4644e.lovable.app-1780058950282.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
