@@ -1,123 +1,168 @@
-import { useEffect, useState } from "react";
-import { motion, useScroll, useSpring } from "framer-motion";
-import { Menu, X, Moon, Sun } from "lucide-react";
-import { Logo } from "./Logo";
-import { track } from "@/lib/analytics";
+import React, { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
 
-const NAV = [
-  { label: "Mission", href: "#mission" },
-  { label: "What We Do", href: "#what" },
-  { label: "Ecosystem", href: "#ecosystem" },
-  { label: "Products", href: "#products" },
-  { label: "Why Us", href: "#why" },
-  { label: "Contact", href: "#contact" },
-];
+interface NavbarProps {
+  onOpenPartner: (track?: string) => void;
+}
 
-export function Navbar() {
-  const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [dark, setDark] = useState(false);
-
-  const { scrollYProgress } = useScroll();
-  const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 24, mass: 0.2 });
+export const Navbar: React.FC<NavbarProps> = ({ onOpenPartner }) => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>('home');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+
+      const sections = [
+        'ecosystem',
+        'what-we-build',
+        'products',
+        'innovation-lab',
+        'who-we-serve',
+        'about'
+      ];
+
+      const scrollPos = window.scrollY + 120;
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sections[i]);
+        if (el && el.offsetTop <= scrollPos) {
+          setActiveSection(sections[i]);
+          return;
+        }
+      }
+      if (window.scrollY < 200) {
+        setActiveSection('home');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    const stored = typeof window !== "undefined" ? localStorage.getItem("theme") : null;
-    const isDark = stored === "dark" || (!stored && window.matchMedia("(prefers-color-scheme: dark)").matches);
-    setDark(isDark);
-    document.documentElement.classList.toggle("dark", isDark);
-  }, []);
+  const navLinks = [
+    { label: 'Ecosystem', href: '#ecosystem', id: 'ecosystem' },
+    { label: 'What We Build', href: '#what-we-build', id: 'what-we-build' },
+    { label: 'Products', href: '#products', id: 'products' },
+    { label: 'Innovation Lab', href: '#innovation-lab', id: 'innovation-lab' },
+    { label: 'Who We Serve', href: '#who-we-serve', id: 'who-we-serve' },
+    { label: 'About', href: '#about', id: 'about' }
+  ];
 
-  const toggleTheme = () => {
-    const next = !dark;
-    setDark(next);
-    document.documentElement.classList.toggle("dark", next);
-    localStorage.setItem("theme", next ? "dark" : "light");
-    track("theme_toggle", { mode: next ? "dark" : "light" });
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    if (href === '#') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
-    <>
-      <motion.div
-        style={{ scaleX: progress }}
-        className="fixed left-0 right-0 top-0 z-[60] h-[2px] origin-left bg-gradient-brand"
-      />
-      <header
-        className={
-          "fixed inset-x-0 top-0 z-50 transition-all duration-300 " +
-          (scrolled ? "glass border-b" : "bg-transparent")
-        }
-      >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 lg:px-8">
-          <a href="#top" className="flex items-center gap-2" onClick={() => track("nav_click", { to: "top" })}>
-            <Logo className="h-8 sm:h-9" />
+    <header
+      className={`fixed top-0 left-0 right-0 w-full z-40 transition-all duration-300 border-b ${
+        isScrolled
+          ? 'bg-surface/95 backdrop-blur-md border-outline-variant/40 shadow-xs h-16 sm:h-20'
+          : 'bg-surface/90 backdrop-blur-md border-outline-variant/40 h-20'
+      }`}
+    >
+      <div className="h-full max-w-max-container mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between gap-gutter-md">
+        {/* Brand & Logo */}
+        <div className="flex items-center">
+          <a
+            href="#"
+            onClick={e => handleNavClick(e, '#')}
+            className="flex items-center gap-gutter-sm focus:outline-none group"
+          >
+            <img
+              alt="AFRINOVERSE"
+              className="h-12 w-auto object-contain transition-transform group-hover:scale-105 duration-200"
+              src="/favicon.jpg"
+            />
           </a>
-
-          <nav className="hidden items-center gap-7 lg:flex">
-            {NAV.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={() => track("nav_click", { to: item.href })}
-                className="text-sm font-medium text-foreground/70 transition hover:text-foreground"
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-2">
-            <button
-              onClick={toggleTheme}
-              aria-label="Toggle theme"
-              className="rounded-full border border-border p-2 text-foreground/70 transition hover:bg-muted hover:text-foreground"
-            >
-              {dark ? <Sun size={16} /> : <Moon size={16} />}
-            </button>
-            <a
-              href="#contact"
-              onClick={() => track("cta_click", { id: "partner_nav" })}
-              className="hidden rounded-full bg-gradient-brand px-4 py-2 text-sm font-semibold text-white shadow-glow transition hover:opacity-95 sm:inline-flex"
-            >
-              Partner with us
-            </a>
-            <button
-              className="lg:hidden rounded-full border border-border p-2"
-              onClick={() => setOpen((v) => !v)}
-              aria-label="Menu"
-            >
-              {open ? <X size={18} /> : <Menu size={18} />}
-            </button>
-          </div>
         </div>
 
-        {open && (
-          <div className="lg:hidden border-t glass">
-            <div className="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-3">
-              {NAV.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => {
-                    setOpen(false);
-                    track("nav_click", { to: item.href, source: "mobile" });
-                  }}
-                  className="rounded-lg px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-muted"
-                >
-                  {item.label}
-                </a>
-              ))}
+        {/* Desktop Navigation Links */}
+        <nav className="hidden lg:flex items-center gap-gutter-lg">
+          {navLinks.map(link => {
+            const isActive = activeSection === link.id;
+            return (
+              <a
+                key={link.id}
+                href={link.href}
+                onClick={e => handleNavClick(e, link.href)}
+                className={`relative font-label-md text-label-md py-1 transition-colors duration-200 ${
+                  isActive ? 'text-on-surface font-bold' : 'text-on-surface-variant hover:text-on-surface'
+                }`}
+              >
+                {link.label}
+                {isActive && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-secondary rounded-full" />
+                )}
+              </a>
+            );
+          })}
+        </nav>
+
+        {/* Action Controls */}
+        <div className="flex items-center gap-gutter-md">
+          <button
+            type="button"
+            onClick={() => onOpenPartner()}
+            className="inline-flex items-center justify-center bg-primary-container text-on-primary font-label-md text-label-md px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg border border-secondary/40 hover:bg-inverse-surface hover:text-inverse-on-surface transition-all shadow-sm active:scale-[0.98] cursor-pointer"
+          >
+            Partner With Us
+          </button>
+
+          {/* Mobile Hamburger Button */}
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle navigation menu"
+            className="lg:hidden p-2 text-on-surface hover:bg-surface-container rounded-lg focus:outline-none transition-colors"
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Drawer Menu */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden bg-surface-container-lowest border-b border-outline-variant/40 px-margin-mobile py-6 shadow-lg animate-in slide-in-from-top-2 duration-200">
+          <nav className="flex flex-col space-y-4">
+            {navLinks.map(link => (
+              <a
+                key={link.id}
+                href={link.href}
+                onClick={e => handleNavClick(e, link.href)}
+                className={`font-label-md text-label-md py-2 px-3 rounded-md transition-colors ${
+                  activeSection === link.id
+                    ? 'bg-surface-container text-secondary font-bold'
+                    : 'text-on-surface hover:bg-surface-container-low'
+                }`}
+              >
+                {link.label}
+              </a>
+            ))}
+            <div className="pt-2 border-t border-outline-variant/30">
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenPartner();
+                }}
+                className="w-full inline-flex items-center justify-center bg-secondary-container text-on-primary font-label-md text-label-md py-3 rounded-lg shadow-sm"
+              >
+                Partner With Us
+              </button>
             </div>
-          </div>
-        )}
-      </header>
-    </>
+          </nav>
+        </div>
+      )}
+    </header>
   );
-}
+};
