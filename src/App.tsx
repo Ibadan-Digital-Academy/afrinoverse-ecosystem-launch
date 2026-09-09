@@ -3,23 +3,23 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
-import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { EcosystemSection } from './components/EcosystemSection';
-import { WhatWeBuildSection } from './components/WhatWeBuildSection';
-import { ProductsSection } from './components/ProductsSection';
-import { InnovationLabSection } from './components/InnovationLabSection';
-import { WhyAfrinoverseSection } from './components/WhyAfrinoverseSection';
-import { ExperienceSection } from './components/ExperienceSection';
-import { WhoWeServeSection } from './components/WhoWeServeSection';
-import { VisionSection } from './components/VisionSection';
-import { CtaSection } from './components/CtaSection';
-import { Footer } from './components/Footer';
-import { PartnerModal } from './components/PartnerModal';
-import { ProductDetailModal } from './components/ProductDetailModal';
-import { LegalModal } from './components/LegalModal';
-import { ProductItem } from './types';
+import React, {useState} from 'react';
+import {Navbar} from './components/Navbar';
+import {Hero} from './components/Hero';
+import {EcosystemSection} from './components/EcosystemSection';
+import {WhatWeBuildSection} from './components/WhatWeBuildSection';
+import {ProductsSection} from './components/ProductsSection';
+import {InnovationLabSection} from './components/InnovationLabSection';
+import {WhyAfrinoverseSection} from './components/WhyAfrinoverseSection';
+import {ExperienceSection} from './components/ExperienceSection';
+import {WhoWeServeSection} from './components/WhoWeServeSection';
+import {VisionSection} from './components/VisionSection';
+import {CtaSection} from './components/CtaSection';
+import {Footer} from './components/Footer';
+import {PartnerModal} from './components/PartnerModal';
+import {ProductDetailModal} from './components/ProductDetailModal';
+import {LegalModal} from './components/LegalModal';
+import {ProductItem} from './types';
 
 export default function App() {
   const [isPartnerModalOpen, setIsPartnerModalOpen] = useState(false);
@@ -58,10 +58,7 @@ export default function App() {
           <WhatWeBuildSection />
 
           {/* SECTION 03: OUR PRODUCTS */}
-          <ProductsSection
-            onSelectProduct={handleSelectProduct}
-            onOpenPartner={handleOpenPartner}
-          />
+          <ProductsSection onSelectProduct={handleSelectProduct} />
 
           {/* SECTION 04: INNOVATION LAB & VENTURE BUILDING */}
           <InnovationLabSection onOpenPartner={handleOpenPartner} />
@@ -84,10 +81,7 @@ export default function App() {
       </main>
 
       {/* FOOTER */}
-      <Footer
-        onOpenPartner={handleOpenPartner}
-        onOpenLegal={handleOpenLegal}
-      />
+      <Footer onOpenPartner={handleOpenPartner} onOpenLegal={handleOpenLegal} />
 
       {/* INTERACTIVE MODALS */}
       <PartnerModal

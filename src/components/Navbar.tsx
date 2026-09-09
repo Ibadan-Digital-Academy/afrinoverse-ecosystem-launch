@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import React, {useState, useEffect} from 'react';
+import {Menu, X} from 'lucide-react';
 
 interface NavbarProps {
   onOpenPartner: (track?: string) => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenPartner }) => {
+export const Navbar: React.FC<NavbarProps> = ({onOpenPartner}) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState<string>('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -20,7 +20,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPartner }) => {
         'products',
         'innovation-lab',
         'who-we-serve',
-        'about'
+        'about',
       ];
 
       const scrollPos = window.scrollY + 120;
@@ -36,29 +36,29 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPartner }) => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('scroll', handleScroll, {passive: true});
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
-    { label: 'Ecosystem', href: '#ecosystem', id: 'ecosystem' },
-    { label: 'What We Build', href: '#what-we-build', id: 'what-we-build' },
-    { label: 'Products', href: '#products', id: 'products' },
-    { label: 'Innovation Lab', href: '#innovation-lab', id: 'innovation-lab' },
-    { label: 'Who We Serve', href: '#who-we-serve', id: 'who-we-serve' },
-    { label: 'About', href: '#about', id: 'about' }
+    {label: 'Ecosystem', href: '#ecosystem', id: 'ecosystem'},
+    {label: 'What We Build', href: '#what-we-build', id: 'what-we-build'},
+    {label: 'Products', href: '#products', id: 'products'},
+    {label: 'Innovation Lab', href: '#innovation-lab', id: 'innovation-lab'},
+    {label: 'Who We Serve', href: '#who-we-serve', id: 'who-we-serve'},
+    {label: 'About', href: '#about', id: 'about'},
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setMobileMenuOpen(false);
     if (href === '#') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({top: 0, behavior: 'smooth'});
       return;
     }
     const target = document.querySelector(href);
     if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+      target.scrollIntoView({behavior: 'smooth'});
     }
   };
 
@@ -75,7 +75,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPartner }) => {
         <div className="flex items-center">
           <a
             href="#"
-            onClick={e => handleNavClick(e, '#')}
+            onClick={(e) => handleNavClick(e, '#')}
             className="flex items-center gap-gutter-sm focus:outline-none group"
           >
             <img
@@ -88,15 +88,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPartner }) => {
 
         {/* Desktop Navigation Links */}
         <nav className="hidden lg:flex items-center gap-gutter-lg">
-          {navLinks.map(link => {
+          {navLinks.map((link) => {
             const isActive = activeSection === link.id;
             return (
               <a
                 key={link.id}
                 href={link.href}
-                onClick={e => handleNavClick(e, link.href)}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className={`relative font-label-md text-label-md py-1 transition-colors duration-200 ${
-                  isActive ? 'text-on-surface font-bold' : 'text-on-surface-variant hover:text-on-surface'
+                  isActive
+                    ? 'text-on-surface font-bold'
+                    : 'text-on-surface-variant hover:text-on-surface'
                 }`}
               >
                 {link.label}
@@ -134,11 +136,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPartner }) => {
       {mobileMenuOpen && (
         <div className="lg:hidden bg-surface-container-lowest border-b border-outline-variant/40 px-margin-mobile py-6 shadow-lg animate-in slide-in-from-top-2 duration-200">
           <nav className="flex flex-col space-y-4">
-            {navLinks.map(link => (
+            {navLinks.map((link) => (
               <a
                 key={link.id}
                 href={link.href}
-                onClick={e => handleNavClick(e, link.href)}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className={`font-label-md text-label-md py-2 px-3 rounded-md transition-colors ${
                   activeSection === link.id
                     ? 'bg-surface-container text-secondary font-bold'

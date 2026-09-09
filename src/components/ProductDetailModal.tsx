@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { X, Check, ArrowRight, Layers, ShieldCheck, Cpu } from 'lucide-react';
-import { ProductItem } from '../types';
+import React, {useEffect} from 'react';
+import {motion, AnimatePresence} from 'motion/react';
+import {X, Check, ArrowRight, ShieldCheck} from 'lucide-react';
+import {ProductItem} from '../types';
 
 interface ProductDetailModalProps {
   product: ProductItem | null;
@@ -14,7 +14,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   product,
   isOpen,
   onClose,
-  onRequestPartner
+  onRequestPartner,
 }) => {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -31,19 +31,19 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
             onClick={onClose}
             className="fixed inset-0 bg-primary/70 backdrop-blur-xs"
             aria-hidden="true"
           />
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 16 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 16 }}
-            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            initial={{opacity: 0, scale: 0.95, y: 16}}
+            animate={{opacity: 1, scale: 1, y: 0}}
+            exit={{opacity: 0, scale: 0.95, y: 16}}
+            transition={{duration: 0.25, ease: [0.16, 1, 0.3, 1]}}
             className="relative w-full max-w-3xl bg-surface-container-lowest rounded-xl border border-outline-variant/50 shadow-2xl overflow-hidden z-10 my-auto"
             role="dialog"
             aria-modal="true"
@@ -60,7 +60,10 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                     {product.version}
                   </span>
                 </div>
-                <h3 id="product-detail-title" className="font-headline-lg text-headline-lg text-on-surface">
+                <h3
+                  id="product-detail-title"
+                  className="font-headline-lg text-headline-lg text-on-surface"
+                >
                   {product.name}
                 </h3>
                 <p className="font-body-md text-body-md text-on-surface-variant mt-1">
@@ -99,7 +102,10 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {product.features.map((feature, idx) => (
-                  <div key={idx} className="p-4 rounded-lg bg-surface-container-low border border-outline-variant/30">
+                  <div
+                    key={idx}
+                    className="p-4 rounded-lg bg-surface-container-low border border-outline-variant/30"
+                  >
                     <span className="font-label-md text-label-md text-on-surface font-semibold block mb-1">
                       {feature.title}
                     </span>
@@ -120,9 +126,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                       <div className="w-5 h-5 rounded-full bg-secondary/15 text-secondary flex items-center justify-center shrink-0 mt-0.5">
                         <Check className="w-3.5 h-3.5" />
                       </div>
-                      <span className="font-body-md text-body-md text-on-surface">
-                        {highlight}
-                      </span>
+                      <span className="font-body-md text-body-md text-on-surface">{highlight}</span>
                     </li>
                   ))}
                 </ul>

@@ -1,18 +1,14 @@
-import React, { useState } from 'react';
-import { motion } from 'motion/react';
-import { ArrowRight, Sliders, TrendingUp, BarChart3, CheckCircle2 } from 'lucide-react';
-import { PRODUCTS_DATA, TOOLPRO_MODULES } from '../data/afrinoverseData';
-import { ProductItem } from '../types';
+import React, {useState} from 'react';
+import {motion} from 'motion/react';
+import {ArrowRight, Sliders, TrendingUp, BarChart3, CheckCircle2} from 'lucide-react';
+import {PRODUCTS_DATA, TOOLPRO_MODULES} from '../data/afrinoverseData';
+import {ProductItem} from '../types';
 
 interface ProductsSectionProps {
   onSelectProduct: (product: ProductItem) => void;
-  onOpenPartner: (track: string) => void;
 }
 
-export const ProductsSection: React.FC<ProductsSectionProps> = ({
-  onSelectProduct,
-  onOpenPartner
-}) => {
+export const ProductsSection: React.FC<ProductsSectionProps> = ({onSelectProduct}) => {
   const [selectedToolIndex, setSelectedToolIndex] = useState<number>(0);
   const fairway = PRODUCTS_DATA[0];
   const stitch = PRODUCTS_DATA[1];
@@ -34,32 +30,35 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
       features: [
         {
           title: 'Operations Automation',
-          description: 'Automated multi-tier voucher approvals and offline data sync.'
+          description: 'Automated multi-tier voucher approvals and offline data sync.',
         },
         {
           title: 'Institutional Analytics',
-          description: 'One-click compliance reporting and multi-branch ledger audits.'
-        }
+          description: 'One-click compliance reporting and multi-branch ledger audits.',
+        },
       ],
       highlights: [
         'Automated routing of payment vouchers, procurement and staff requisitions',
         'End-to-end encrypted audit logging compliant with institutional donors',
         'Offline-first synchronization for remote field stations and facilities',
-        'Configurable role-based access control with granular permission matrix'
-      ]
+        'Configurable role-based access control with granular permission matrix',
+      ],
     };
     onSelectProduct(toolProItem);
   };
 
   return (
-    <section id="products" className="w-full bg-surface-container-low py-section-md border-t border-outline-variant/30 scroll-mt-12">
+    <section
+      id="products"
+      className="w-full bg-surface-container-low py-section-md border-t border-outline-variant/30 scroll-mt-12"
+    >
       <div className="max-w-max-container mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop space-y-16">
         {/* Section Intro */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.5 }}
+          initial={{opacity: 0, y: 16}}
+          whileInView={{opacity: 1, y: 0}}
+          viewport={{once: true, margin: '-60px'}}
+          transition={{duration: 0.5}}
           className="flex flex-col md:flex-row md:items-end justify-between gap-6"
         >
           <div>
@@ -77,16 +76,17 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
             </p>
           </div>
           <p className="font-body-md text-body-md text-on-surface-variant max-w-md">
-            Proprietary enterprise solutions architected directly for regional workflows, offline-ready operations, and high-growth sectors.
+            Proprietary enterprise solutions architected directly for regional workflows,
+            offline-ready operations, and high-growth sectors.
           </p>
         </motion.div>
 
         {/* PRODUCT 1: FAIRWAYPRO */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.5 }}
+          initial={{opacity: 0, y: 20}}
+          whileInView={{opacity: 1, y: 0}}
+          viewport={{once: true, margin: '-60px'}}
+          transition={{duration: 0.5}}
           className="group grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-surface-container-lowest p-8 md:p-12 rounded-xl border border-outline-variant/40 hover:border-secondary/50 transition-all duration-300 shadow-sm"
         >
           <div className="lg:col-span-6 space-y-6">
@@ -155,10 +155,10 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
 
         {/* PRODUCT 2: STITCHPRO */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.5 }}
+          initial={{opacity: 0, y: 20}}
+          whileInView={{opacity: 1, y: 0}}
+          viewport={{once: true, margin: '-60px'}}
+          transition={{duration: 0.5}}
           className="group grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-surface-container-lowest p-8 md:p-12 rounded-xl border border-outline-variant/40 hover:border-secondary-container/50 transition-all duration-300 shadow-sm"
         >
           <div className="lg:col-span-6 order-2 lg:order-1">
@@ -227,10 +227,10 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
 
         {/* PRODUCT 3: DIGITAL TOOLPRO (Interactive feature modules) */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.5 }}
+          initial={{opacity: 0, y: 20}}
+          whileInView={{opacity: 1, y: 0}}
+          viewport={{once: true, margin: '-60px'}}
+          transition={{duration: 0.5}}
           className="bg-surface-container-lowest p-8 md:p-12 rounded-xl border border-outline-variant/40 shadow-sm"
         >
           <div className="max-w-3xl mb-8 space-y-3">
@@ -248,7 +248,9 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
             </h3>
 
             <p className="font-body-lead text-body-lead text-on-surface-variant">
-              Digital productivity and business automation suite engineered to improve organizational velocity, automate multi-tier approvals, and modernize legacy institutional recordkeeping.
+              Digital productivity and business automation suite engineered to improve
+              organizational velocity, automate multi-tier approvals, and modernize legacy
+              institutional recordkeeping.
             </p>
           </div>
 
@@ -273,8 +275,8 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
                         idx === 0
                           ? 'bg-primary-container text-on-primary'
                           : idx === 1
-                          ? 'bg-secondary text-on-secondary'
-                          : 'bg-inverse-surface text-inverse-on-surface'
+                            ? 'bg-secondary text-on-secondary'
+                            : 'bg-inverse-surface text-inverse-on-surface'
                       }`}
                     >
                       {idx === 0 && <Sliders className="w-5 h-5" />}
@@ -289,19 +291,18 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
                     )}
                   </div>
 
-                  <h4 className="font-headline-sm text-headline-sm text-on-surface">
-                    {mod.title}
-                  </h4>
+                  <h4 className="font-headline-sm text-headline-sm text-on-surface">{mod.title}</h4>
 
-                  <p className="font-body-sm text-body-sm text-on-surface-variant">
-                    {mod.summary}
-                  </p>
+                  <p className="font-body-sm text-body-sm text-on-surface-variant">{mod.summary}</p>
 
                   {/* Dynamic capabilities list */}
                   {isSelected && (
                     <div className="pt-3 border-t border-outline-variant/30 space-y-1.5 animate-in fade-in duration-200">
                       {mod.capabilities.slice(0, 2).map((cap, cIdx) => (
-                        <div key={cIdx} className="flex items-start gap-1.5 text-xs text-on-surface-variant">
+                        <div
+                          key={cIdx}
+                          className="flex items-start gap-1.5 text-xs text-on-surface-variant"
+                        >
                           <CheckCircle2 className="w-3.5 h-3.5 text-secondary shrink-0 mt-0.5" />
                           <span>{cap}</span>
                         </div>

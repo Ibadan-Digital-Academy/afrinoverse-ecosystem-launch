@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { motion } from 'motion/react';
-import { ArrowRight, Mail, Copy, Check } from 'lucide-react';
+import React, {useState} from 'react';
+import {motion} from 'motion/react';
+import {ArrowRight, Mail, Copy, Check} from 'lucide-react';
 
 interface CtaSectionProps {
   onOpenPartner: (track?: string) => void;
 }
 
-export const CtaSection: React.FC<CtaSectionProps> = ({ onOpenPartner }) => {
+export const CtaSection: React.FC<CtaSectionProps> = ({onOpenPartner}) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopyEmail = (e: React.MouseEvent) => {
@@ -31,10 +31,10 @@ export const CtaSection: React.FC<CtaSectionProps> = ({ onOpenPartner }) => {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter-xl items-end">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.5 }}
+            initial={{opacity: 0, y: 20}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: true, margin: '-60px'}}
+            transition={{duration: 0.5}}
             className="lg:col-span-8 space-y-4"
           >
             <span className="font-kicker-badge text-kicker-badge text-secondary-container uppercase tracking-widest block">
@@ -46,19 +46,20 @@ export const CtaSection: React.FC<CtaSectionProps> = ({ onOpenPartner }) => {
             </h2>
 
             <p className="font-headline-sm text-headline-sm text-secondary-container font-semibold">
-              Let’s build Africa’s next generation of platforms, capabilities and opportunities.
+              Let's build Africa's next generation of platforms, capabilities and opportunities.
             </p>
 
             <p className="font-body-lead text-body-lead text-on-primary-container max-w-2xl pt-2">
-              Whether you are a learner, founder, institution, enterprise, investor or strategic partner, AFRINOVERSE welcomes opportunities to collaborate, innovate and build.
+              Whether you are a learner, founder, institution, enterprise, investor or strategic
+              partner, AFRINOVERSE welcomes opportunities to collaborate, innovate and build.
             </p>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.5, delay: 0.15 }}
+            initial={{opacity: 0, y: 20}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: true, margin: '-60px'}}
+            transition={{duration: 0.5, delay: 0.15}}
             className="lg:col-span-4 flex flex-col gap-4"
           >
             <button
@@ -91,11 +92,15 @@ export const CtaSection: React.FC<CtaSectionProps> = ({ onOpenPartner }) => {
                   title="Copy email address"
                   className="p-2 rounded bg-primary-container text-on-primary-container hover:text-on-primary hover:bg-primary transition-colors cursor-pointer"
                 >
-                  {copied ? <Check className="w-4 h-4 text-secondary-container" /> : <Copy className="w-4 h-4" />}
+                  {copied ? (
+                    <Check className="w-4 h-4 text-secondary-container" />
+                  ) : (
+                    <Copy className="w-4 h-4" />
+                  )}
                 </button>
                 <a
                   href="mailto:collaborate@afrinoverse.com?subject=Inquiry%20from%20AFRINOVERSE%20Website"
-                  onClick={e => e.stopPropagation()}
+                  onClick={(e) => e.stopPropagation()}
                   title="Open mail client"
                   className="p-2 rounded bg-primary-container text-on-primary-container hover:text-on-primary hover:bg-primary transition-colors"
                 >

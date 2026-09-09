@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { motion } from 'motion/react';
-import { FlaskConical, ArrowRight, Check } from 'lucide-react';
-import { INCUBATION_STEPS } from '../data/afrinoverseData';
+import React, {useState} from 'react';
+import {motion} from 'motion/react';
+import {FlaskConical, Check} from 'lucide-react';
+import {INCUBATION_STEPS} from '../data/afrinoverseData';
 
 interface InnovationLabSectionProps {
   onOpenPartner: (track: string) => void;
 }
 
-export const InnovationLabSection: React.FC<InnovationLabSectionProps> = ({ onOpenPartner }) => {
+export const InnovationLabSection: React.FC<InnovationLabSectionProps> = ({onOpenPartner}) => {
   const [activeStage, setActiveStage] = useState<number>(0);
 
   return (
@@ -19,10 +19,10 @@ export const InnovationLabSection: React.FC<InnovationLabSectionProps> = ({ onOp
         {/* Top Lab Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 border-b border-outline-variant/20 pb-12">
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.5 }}
+            initial={{opacity: 0, y: 16}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: true, margin: '-60px'}}
+            transition={{duration: 0.5}}
             className="max-w-3xl space-y-3"
           >
             <div className="flex items-center gap-2">
@@ -35,15 +35,16 @@ export const InnovationLabSection: React.FC<InnovationLabSectionProps> = ({ onOp
               Where Ideas Become Ventures
             </h2>
             <p className="font-body-lead text-body-lead text-on-primary-container max-w-2xl">
-              Through the AFRINOVERSE Innovation Lab, we develop software products, emerging technologies and new ventures that respond to real African challenges.
+              Through the AFRINOVERSE Innovation Lab, we develop software products, emerging
+              technologies and new ventures that respond to real African challenges.
             </p>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            initial={{opacity: 0, y: 16}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: true, margin: '-60px'}}
+            transition={{duration: 0.5, delay: 0.1}}
           >
             <button
               type="button"
@@ -60,10 +61,10 @@ export const InnovationLabSection: React.FC<InnovationLabSectionProps> = ({ onOp
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Lab Photography Showcase */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.5 }}
+            initial={{opacity: 0, scale: 0.98}}
+            whileInView={{opacity: 1, scale: 1}}
+            viewport={{once: true, margin: '-60px'}}
+            transition={{duration: 0.5}}
             className="lg:col-span-5 rounded-xl overflow-hidden border border-outline-variant/20 shadow-xl bg-surface-container/10 group"
           >
             <div className="overflow-hidden relative">
@@ -100,10 +101,10 @@ export const InnovationLabSection: React.FC<InnovationLabSectionProps> = ({ onOp
               return (
                 <motion.div
                   key={step.stepNumber}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: '-40px' }}
-                  transition={{ duration: 0.4, delay: idx * 0.08 }}
+                  initial={{opacity: 0, x: 20}}
+                  whileInView={{opacity: 1, x: 0}}
+                  viewport={{once: true, margin: '-40px'}}
+                  transition={{duration: 0.4, delay: idx * 0.08}}
                   onClick={() => setActiveStage(idx)}
                   onMouseEnter={() => setActiveStage(idx)}
                   className={`p-5 rounded-lg border transition-all duration-300 cursor-pointer flex items-start gap-4 ${

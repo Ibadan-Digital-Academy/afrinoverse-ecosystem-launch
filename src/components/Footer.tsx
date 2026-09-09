@@ -5,12 +5,12 @@ interface FooterProps {
   onOpenLegal: (type: 'privacy' | 'terms') => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenPartner, onOpenLegal }) => {
+export const Footer: React.FC<FooterProps> = ({onOpenPartner, onOpenLegal}) => {
   const scrollToSection = (e: React.MouseEvent, sectionId: string) => {
     e.preventDefault();
     const el = document.getElementById(sectionId);
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+      el.scrollIntoView({behavior: 'smooth'});
     }
   };
 
@@ -21,18 +21,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPartner, onOpenLegal }) =>
           {/* Brand Column */}
           <div className="lg:col-span-4 space-y-gutter-md">
             <div className="flex items-center gap-gutter-sm">
-              <img
-                alt="AFRINOVERSE"
-                className="h-8 w-auto object-contain"
-                src="/favicon.jpg"
-              />
+              <img alt="AFRINOVERSE" className="h-8 w-auto object-contain" src="/favicon.jpg" />
               <span className="font-headline-sm text-headline-sm tracking-tight text-on-surface font-bold uppercase">
                 AFRINOVERSE
               </span>
             </div>
 
             <p className="font-body-lead text-body-lead text-on-surface max-w-sm">
-              Building Systems for Africa’s Next Generation
+              Building Systems for Africa's Next Generation
             </p>
 
             <div className="flex items-center gap-gutter-xs">
@@ -55,37 +51,37 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPartner, onOpenLegal }) =>
               </div>
               <ul className="space-y-gutter-xs">
                 <li
-                  onClick={e => scrollToSection(e, 'ecosystem')}
+                  onClick={(e) => scrollToSection(e, 'ecosystem')}
                   className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
                 >
                   Ibadan Digital Academy
                 </li>
                 <li
-                  onClick={e => scrollToSection(e, 'ecosystem')}
+                  onClick={(e) => scrollToSection(e, 'ecosystem')}
                   className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
                 >
                   DigitalBridge Studio
                 </li>
                 <li
-                  onClick={e => scrollToSection(e, 'products')}
+                  onClick={(e) => scrollToSection(e, 'products')}
                   className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
                 >
                   Products
                 </li>
                 <li
-                  onClick={e => scrollToSection(e, 'innovation-lab')}
+                  onClick={(e) => scrollToSection(e, 'innovation-lab')}
                   className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
                 >
                   Lab
                 </li>
                 <li
-                  onClick={e => scrollToSection(e, 'ecosystem')}
+                  onClick={(e) => scrollToSection(e, 'ecosystem')}
                   className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
                 >
                   Enterprise
                 </li>
                 <li
-                  onClick={e => scrollToSection(e, 'ecosystem')}
+                  onClick={(e) => scrollToSection(e, 'ecosystem')}
                   className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
                 >
                   Venture Growth
@@ -100,19 +96,19 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPartner, onOpenLegal }) =>
               </div>
               <ul className="space-y-gutter-xs">
                 <li
-                  onClick={e => scrollToSection(e, 'products')}
+                  onClick={(e) => scrollToSection(e, 'products')}
                   className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
                 >
                   FairwayPro
                 </li>
                 <li
-                  onClick={e => scrollToSection(e, 'products')}
+                  onClick={(e) => scrollToSection(e, 'products')}
                   className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
                 >
                   StitchPro
                 </li>
                 <li
-                  onClick={e => scrollToSection(e, 'products')}
+                  onClick={(e) => scrollToSection(e, 'products')}
                   className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
                 >
                   Digital ToolPro
@@ -127,19 +123,19 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPartner, onOpenLegal }) =>
               </div>
               <ul className="space-y-gutter-xs">
                 <li
-                  onClick={e => scrollToSection(e, 'innovation-lab')}
+                  onClick={(e) => scrollToSection(e, 'innovation-lab')}
                   className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
                 >
                   Incubation
                 </li>
                 <li
-                  onClick={e => scrollToSection(e, 'innovation-lab')}
+                  onClick={(e) => scrollToSection(e, 'innovation-lab')}
                   className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
                 >
                   Emerging Tech
                 </li>
                 <li
-                  onClick={e => scrollToSection(e, 'innovation-lab')}
+                  onClick={(e) => scrollToSection(e, 'innovation-lab')}
                   className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
                 >
                   Ventures
@@ -154,31 +150,31 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPartner, onOpenLegal }) =>
               </div>
               <ul className="space-y-gutter-xs">
                 <li
-                  onClick={e => scrollToSection(e, 'who-we-serve')}
+                  onClick={(e) => scrollToSection(e, 'who-we-serve')}
                   className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
                 >
                   Learners
                 </li>
                 <li
-                  onClick={e => scrollToSection(e, 'who-we-serve')}
+                  onClick={(e) => scrollToSection(e, 'who-we-serve')}
                   className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
                 >
                   Institutions
                 </li>
                 <li
-                  onClick={e => scrollToSection(e, 'who-we-serve')}
+                  onClick={(e) => scrollToSection(e, 'who-we-serve')}
                   className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
                 >
                   Founders
                 </li>
                 <li
-                  onClick={e => scrollToSection(e, 'who-we-serve')}
+                  onClick={(e) => scrollToSection(e, 'who-we-serve')}
                   className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
                 >
                   Enterprises
                 </li>
                 <li
-                  onClick={e => scrollToSection(e, 'who-we-serve')}
+                  onClick={(e) => scrollToSection(e, 'who-we-serve')}
                   className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
                 >
                   Government
@@ -193,19 +189,19 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPartner, onOpenLegal }) =>
               </div>
               <ul className="space-y-gutter-xs">
                 <li
-                  onClick={e => scrollToSection(e, 'about')}
+                  onClick={(e) => scrollToSection(e, 'about')}
                   className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
                 >
                   Mission
                 </li>
                 <li
-                  onClick={e => scrollToSection(e, 'about')}
+                  onClick={(e) => scrollToSection(e, 'about')}
                   className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
                 >
                   Team
                 </li>
                 <li
-                  onClick={e => scrollToSection(e, 'about')}
+                  onClick={(e) => scrollToSection(e, 'about')}
                   className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
                 >
                   Experience
@@ -224,7 +220,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPartner, onOpenLegal }) =>
         {/* Bottom Bar */}
         <div className="pt-gutter-xl flex flex-col md:flex-row items-center justify-between gap-gutter-md">
           <p className="font-body-sm text-body-sm text-on-surface-variant">
-            © 2025 AFRINOVERSE. All rights reserved. Building Systems for Africa’s Next Generation.
+            © 2025 AFRINOVERSE. All rights reserved. Building Systems for Africa's Next Generation.
           </p>
           <div className="flex items-center gap-gutter-lg">
             <button

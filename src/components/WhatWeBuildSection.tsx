@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { motion } from 'motion/react';
-import { BUILD_STAGES } from '../data/afrinoverseData';
+import React, {useState} from 'react';
+import {motion} from 'motion/react';
+import {BUILD_STAGES} from '../data/afrinoverseData';
 
 export const WhatWeBuildSection: React.FC = () => {
   const [activeStep, setActiveStep] = useState<number>(1);
@@ -10,10 +10,10 @@ export const WhatWeBuildSection: React.FC = () => {
       <div className="max-w-max-container mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
         {/* Section Framing */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.5 }}
+          initial={{opacity: 0, y: 16}}
+          whileInView={{opacity: 1, y: 0}}
+          viewport={{once: true, margin: '-60px'}}
+          transition={{duration: 0.5}}
           className="max-w-3xl mb-12"
         >
           <span className="font-kicker-badge text-kicker-badge text-secondary uppercase tracking-widest block mb-2">
@@ -26,16 +26,19 @@ export const WhatWeBuildSection: React.FC = () => {
             From learning to enterprise.
           </p>
           <p className="font-body-lead text-body-lead text-on-surface-variant">
-            We build the capabilities, content, technologies, platforms and ventures that enable people and organisations to learn, create, innovate and grow. Our work spans education, digital skills, publishing, software products, enterprise solutions, innovation and venture development.
+            We build the capabilities, content, technologies, platforms and ventures that enable
+            people and organisations to learn, create, innovate and grow. Our work spans education,
+            digital skills, publishing, software products, enterprise solutions, innovation and
+            venture development.
           </p>
         </motion.div>
 
         {/* Linear Progression Pipeline Container */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          initial={{opacity: 0, y: 20}}
+          whileInView={{opacity: 1, y: 0}}
+          viewport={{once: true, margin: '-60px'}}
+          transition={{duration: 0.5, delay: 0.1}}
           className="bg-surface-container-low p-6 sm:p-8 md:p-10 rounded-xl border border-outline-variant/40"
         >
           {/* Subtle connecting progress bar above items on larger screens */}
@@ -43,7 +46,7 @@ export const WhatWeBuildSection: React.FC = () => {
             <div className="h-1 w-full bg-outline-variant/30 rounded-full" />
             <motion.div
               className="absolute top-0 left-0 h-1 bg-gradient-to-r from-secondary-container via-secondary to-primary rounded-full transition-all duration-500"
-              style={{ width: `${(activeStep / 6) * 100}%` }}
+              style={{width: `${(activeStep / 6) * 100}%`}}
             />
           </div>
 
@@ -69,8 +72,8 @@ export const WhatWeBuildSection: React.FC = () => {
                         stage.step === 6
                           ? 'bg-primary text-on-primary'
                           : isPast
-                          ? 'bg-secondary text-on-secondary shadow-xs'
-                          : 'bg-outline-variant text-on-surface'
+                            ? 'bg-secondary text-on-secondary shadow-xs'
+                            : 'bg-outline-variant text-on-surface'
                       }`}
                     >
                       {stage.step}

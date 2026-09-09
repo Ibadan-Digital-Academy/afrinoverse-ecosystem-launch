@@ -1,0 +1,49 @@
+name: Bug report
+description: Report broken or unexpected behaviour
+title: 'fix(<scope>): <short description>'
+labels: ['bug', 'needs-triage']
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      options:
+        - Navigation
+        - Ecosystem or content section
+        - Product details
+        - Partnership form
+        - Legal modal
+        - Responsive layout or accessibility
+        - Build or deployment
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open ...
+        2. Select ...
+        3. Observe ...
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: Browser, operating system, viewport, and deployment URL
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Screenshots or logs
+      description: Remove credentials and personal data before attaching anything.

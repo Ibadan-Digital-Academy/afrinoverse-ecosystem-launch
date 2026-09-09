@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { motion } from 'motion/react';
-import { ArrowRight, Check } from 'lucide-react';
-import { ENGINES_DATA } from '../data/afrinoverseData';
-import { EngineItem } from '../types';
+import React, {useState} from 'react';
+import {motion} from 'motion/react';
+import {ArrowRight, Check} from 'lucide-react';
+import {ENGINES_DATA} from '../data/afrinoverseData';
+import {EngineItem} from '../types';
 
 interface EcosystemSectionProps {
   onOpenPartner: (track: string) => void;
 }
 
-export const EcosystemSection: React.FC<EcosystemSectionProps> = ({ onOpenPartner }) => {
+export const EcosystemSection: React.FC<EcosystemSectionProps> = ({onOpenPartner}) => {
   const [activeEngineId, setActiveEngineId] = useState<string | null>(null);
 
   const getEngineTopBorder = (borderColor: string) => {
@@ -33,10 +33,10 @@ export const EcosystemSection: React.FC<EcosystemSectionProps> = ({ onOpenPartne
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-gutter-lg mb-14">
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.5 }}
+            initial={{opacity: 0, y: 16}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: true, margin: '-60px'}}
+            transition={{duration: 0.5}}
             className="max-w-2xl"
           >
             <div className="flex items-center gap-2 mb-3">
@@ -46,18 +46,20 @@ export const EcosystemSection: React.FC<EcosystemSectionProps> = ({ onOpenPartne
               </span>
             </div>
             <h2 className="font-headline-xl text-headline-xl text-on-surface tracking-tight">
-              We connect the pieces that help Africa’s next generation learn, create, innovate and grow.
+              We connect the pieces that help Africa's next generation learn, create, innovate and
+              grow.
             </h2>
           </motion.div>
 
           <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            initial={{opacity: 0, y: 16}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: true, margin: '-60px'}}
+            transition={{duration: 0.5, delay: 0.1}}
             className="font-body-md text-body-md text-on-surface-variant max-w-md"
           >
-            We connect education, publishing, technology, innovation and enterprise to create practical capabilities and opportunities for Africa’s next generation.
+            We connect education, publishing, technology, innovation and enterprise to create
+            practical capabilities and opportunities for Africa's next generation.
           </motion.p>
         </div>
 
@@ -69,10 +71,10 @@ export const EcosystemSection: React.FC<EcosystemSectionProps> = ({ onOpenPartne
             return (
               <motion.div
                 key={engine.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
+                initial={{opacity: 0, y: 20}}
+                whileInView={{opacity: 1, y: 0}}
+                viewport={{once: true, margin: '-40px'}}
+                transition={{duration: 0.4, delay: index * 0.08}}
                 onMouseEnter={() => setActiveEngineId(engine.id)}
                 onMouseLeave={() => setActiveEngineId(null)}
                 className={`group relative bg-surface-container-lowest p-8 rounded-lg border transition-all duration-300 shadow-xs flex flex-col justify-between cursor-pointer ${
@@ -86,7 +88,7 @@ export const EcosystemSection: React.FC<EcosystemSectionProps> = ({ onOpenPartne
                   {/* Top colored accent line as in Stitch design */}
                   <div
                     className={`border-t-2 ${getEngineTopBorder(
-                      engine.borderColor
+                      engine.borderColor,
                     )} -mt-8 -mx-8 mb-6 pt-6 px-8 flex items-center justify-between transition-colors`}
                   >
                     <span className="font-code-mono text-code-mono text-secondary font-bold tracking-wider">
@@ -123,7 +125,10 @@ export const EcosystemSection: React.FC<EcosystemSectionProps> = ({ onOpenPartne
                         }`}
                       >
                         {engine.details.slice(0, 2).map((detail, dIdx) => (
-                          <div key={dIdx} className="flex items-center gap-2 text-on-surface-variant font-body-sm">
+                          <div
+                            key={dIdx}
+                            className="flex items-center gap-2 text-on-surface-variant font-body-sm"
+                          >
                             <Check className="w-3.5 h-3.5 text-secondary shrink-0" />
                             <span>{detail}</span>
                           </div>

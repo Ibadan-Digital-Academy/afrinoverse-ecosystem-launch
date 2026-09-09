@@ -1,0 +1,41 @@
+name: Feature request
+description: Propose an improvement to the launch site
+title: 'feat(<scope>): <short description>'
+labels: ['feature-request', 'needs-triage']
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Product area
+      options:
+        - Content and storytelling
+        - Navigation
+        - Products
+        - Partnerships
+        - Accessibility and responsive design
+        - Performance and deployment
+        - Cross-cutting
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or opportunity
+      description: Describe the user need and why it matters.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed outcome
+      description:
+        Describe the desired behaviour without prescribing unnecessary implementation details.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: List observable conditions that would make this complete.
+    validations:
+      required: true

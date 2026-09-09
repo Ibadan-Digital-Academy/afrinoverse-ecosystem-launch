@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   --color-surface: #f9f9ff;
@@ -49,18 +49,18 @@
   --color-on-background: #111c2d;
   --color-surface-variant: #d8e3fb;
 
-  --font-display-hero: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-headline-xl: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-headline-lg: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-headline-md: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-headline-sm: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body-lead: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body-md: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body-sm: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-kicker-badge: "Inter", sans-serif;
-  --font-label-md: "Inter", sans-serif;
-  --font-label-sm: "Inter", sans-serif;
-  --font-code-mono: "Inter", monospace;
+  --font-display-hero: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-headline-xl: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-headline-lg: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-headline-md: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-headline-sm: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body-lead: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body-md: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body-sm: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-kicker-badge: 'Inter', sans-serif;
+  --font-label-md: 'Inter', sans-serif;
+  --font-label-sm: 'Inter', sans-serif;
+  --font-code-mono: 'Inter', monospace;
 
   --spacing-gutter-xs: 0.25rem;
   --spacing-gutter-sm: 0.5rem;
@@ -179,14 +179,20 @@
 
 /* Material Symbols alignment and sizing */
 .material-symbols-outlined {
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
   vertical-align: middle;
   display: inline-block;
   line-height: 1;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, ::before, ::after {
+  *,
+  ::before,
+  ::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

@@ -1,17 +1,17 @@
 import React from 'react';
-import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
+import {motion} from 'motion/react';
+import {ArrowRight} from 'lucide-react';
 
 interface HeroProps {
   onOpenPartner: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onOpenPartner }) => {
+export const Hero: React.FC<HeroProps> = ({onOpenPartner}) => {
   const scrollToEcosystem = (e: React.MouseEvent) => {
     e.preventDefault();
     const el = document.getElementById('ecosystem');
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+      el.scrollIntoView({behavior: 'smooth'});
     }
   };
 
@@ -20,9 +20,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenPartner }) => {
       <div className="max-w-max-container mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
         {/* Overline with subtle brand terminal marks */}
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, ease: 'easeOut' }}
+          initial={{opacity: 0, y: 12}}
+          animate={{opacity: 1, y: 0}}
+          transition={{duration: 0.4, ease: 'easeOut'}}
           className="flex items-center gap-gutter-sm mb-6 pt-4"
         >
           <div className="flex items-center gap-1">
@@ -38,24 +38,25 @@ export const Hero: React.FC<HeroProps> = ({ onOpenPartner }) => {
         {/* Main Asymmetric Grid: Headline + Copy on left, Stat badge on right */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter-xl items-end pb-gutter-xl border-b border-outline-variant/30">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1, ease: 'easeOut' }}
+            initial={{opacity: 0, y: 20}}
+            animate={{opacity: 1, y: 0}}
+            transition={{duration: 0.5, delay: 0.1, ease: 'easeOut'}}
             className="lg:col-span-8"
           >
             <h1 className="font-display-hero text-display-hero text-on-surface tracking-tight max-w-4xl">
-              Building Systems for Africa’s Next Generation
+              Building Systems for Africa's Next Generation
             </h1>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
+            initial={{opacity: 0, y: 20}}
+            animate={{opacity: 1, y: 0}}
+            transition={{duration: 0.5, delay: 0.2, ease: 'easeOut'}}
             className="lg:col-span-4 flex flex-col justify-between"
           >
             <p className="font-body-lead text-body-lead text-on-surface-variant max-w-lg mb-8">
-              AFRINOVERSE is a future-focused African innovation ecosystem building the talent, content, technology, products and enterprises that will shape Africa’s next chapter.
+              AFRINOVERSE is a future-focused African innovation ecosystem building the talent,
+              content, technology, products and enterprises that will shape Africa's next chapter.
             </p>
 
             <div className="flex flex-wrap items-center gap-gutter-md">
@@ -81,9 +82,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenPartner }) => {
 
         {/* Hero Visual Showcase: Real African Tech Space Image with Metadata Pill */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
+          initial={{opacity: 0, y: 24}}
+          animate={{opacity: 1, y: 0}}
+          transition={{duration: 0.6, delay: 0.3, ease: 'easeOut'}}
           className="mt-8 relative rounded-xl overflow-hidden shadow-sm border border-outline-variant/40 bg-surface-container group"
         >
           <div className="relative h-[380px] md:h-[500px] lg:h-[580px] w-full overflow-hidden">
@@ -103,9 +104,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenPartner }) => {
                     Integrated Tech Infrastructure
                   </span>
                   <span className="hidden sm:inline text-outline-variant">•</span>
-                  <span className="font-body-sm text-body-sm text-on-surface-variant">
-                    Ibadan
-                  </span>
+                  <span className="font-body-sm text-body-sm text-on-surface-variant">Ibadan</span>
                 </div>
               </div>
 

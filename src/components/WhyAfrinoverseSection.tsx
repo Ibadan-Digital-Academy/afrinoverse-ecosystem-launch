@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { motion } from 'motion/react';
-import { WHY_DOMAINS } from '../data/afrinoverseData';
+import React, {useState} from 'react';
+import {motion} from 'motion/react';
+import {WHY_DOMAINS} from '../data/afrinoverseData';
 
 export const WhyAfrinoverseSection: React.FC = () => {
   const [selectedDomain, setSelectedDomain] = useState<number | null>(null);
@@ -9,18 +9,18 @@ export const WhyAfrinoverseSection: React.FC = () => {
     {
       kicker: '01 • INTEGRATION',
       title: 'Education & Publishing',
-      summary: 'Connecting high-rigor digital skills with accredited curriculum.'
+      summary: 'Connecting high-rigor digital skills with accredited curriculum.',
     },
     {
       kicker: '02 • EXECUTION',
       title: 'Software & Platforms',
-      summary: 'Delivering production enterprise code for mission-critical industries.'
+      summary: 'Delivering production enterprise code for mission-critical industries.',
     },
     {
       kicker: '03 • SUSTAINABILITY',
       title: 'Enterprise Growth',
-      summary: 'Securing institutional adoption, commercial revenue, and venture longevity.'
-    }
+      summary: 'Securing institutional adoption, commercial revenue, and venture longevity.',
+    },
   ];
 
   return (
@@ -28,10 +28,10 @@ export const WhyAfrinoverseSection: React.FC = () => {
       <div className="max-w-max-container mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter-xl items-start pb-12 border-b border-outline-variant/30">
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.5 }}
+            initial={{opacity: 0, y: 16}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: true, margin: '-60px'}}
+            transition={{duration: 0.5}}
             className="lg:col-span-5 space-y-4"
           >
             <div className="flex items-center gap-2">
@@ -44,19 +44,22 @@ export const WhyAfrinoverseSection: React.FC = () => {
               Why AFRINOVERSE
             </h2>
             <p className="font-display-hero-mobile text-display-hero-mobile text-secondary font-bold leading-none">
-              We don’t build in silos.
+              We don't build in silos.
             </p>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            initial={{opacity: 0, y: 16}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: true, margin: '-60px'}}
+            transition={{duration: 0.5, delay: 0.1}}
             className="lg:col-span-7"
           >
             <p className="font-body-lead text-body-lead text-on-surface-variant leading-relaxed mb-6">
-              We connect education, publishing, technology, enterprise, innovation and partnerships so that talent, ideas and opportunities can move from learning to creation, from creation to enterprise, and from enterprise to impact. Our ecosystem brings different capabilities together to build solutions designed for African realities.
+              We connect education, publishing, technology, enterprise, innovation and partnerships
+              so that talent, ideas and opportunities can move from learning to creation, from
+              creation to enterprise, and from enterprise to impact. Our ecosystem brings different
+              capabilities together to build solutions designed for African realities.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
@@ -82,10 +85,10 @@ export const WhyAfrinoverseSection: React.FC = () => {
 
         {/* Ecosystem Interlocking Matrix */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.5 }}
+          initial={{opacity: 0, y: 20}}
+          whileInView={{opacity: 1, y: 0}}
+          viewport={{once: true, margin: '-60px'}}
+          transition={{duration: 0.5}}
           className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 pt-10 text-center"
         >
           {WHY_DOMAINS.map((domain, index) => {
