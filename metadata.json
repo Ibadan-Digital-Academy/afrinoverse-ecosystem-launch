@@ -1,0 +1,6 @@
+{
+  "name": "AFRINOVERSE",
+  "description": "African innovation ecosystem building the talent, content, technology, products and enterprises for Africa's next generation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,195 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #f9f9ff;
+  --color-surface-dim: #cfdaf2;
+  --color-surface-bright: #f9f9ff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f0f3ff;
+  --color-surface-container: #e7eeff;
+  --color-surface-container-high: #dee8ff;
+  --color-surface-container-highest: #d8e3fb;
+  --color-on-surface: #111c2d;
+  --color-on-surface-variant: #45474c;
+  --color-inverse-surface: #263143;
+  --color-inverse-on-surface: #ecf1ff;
+  --color-outline: #76777d;
+  --color-outline-variant: #c6c6cd;
+  --color-surface-tint: #575e71;
+  --color-primary: #000000;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #141c2b;
+  --color-on-primary-container: #7c8497;
+  --color-inverse-primary: #bfc6db;
+  --color-secondary: #a33e00;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #fe6500;
+  --color-on-secondary-container: #541d00;
+  --color-tertiary: #000000;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #410004;
+  --color-on-tertiary-container: #ef4444;
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+  --color-primary-fixed: #dbe2f8;
+  --color-primary-fixed-dim: #bfc6db;
+  --color-on-primary-fixed: #141c2b;
+  --color-on-primary-fixed-variant: #3f4758;
+  --color-secondary-fixed: #ffdbcd;
+  --color-secondary-fixed-dim: #ffb596;
+  --color-on-secondary-fixed: #360f00;
+  --color-on-secondary-fixed-variant: #7c2e00;
+  --color-tertiary-fixed: #ffdad7;
+  --color-tertiary-fixed-dim: #ffb3ad;
+  --color-on-tertiary-fixed: #410004;
+  --color-on-tertiary-fixed-variant: #930013;
+  --color-background: #f9f9ff;
+  --color-on-background: #111c2d;
+  --color-surface-variant: #d8e3fb;
+
+  --font-display-hero: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-headline-xl: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-headline-lg: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-headline-md: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-headline-sm: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body-lead: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body-md: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body-sm: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-kicker-badge: "Inter", sans-serif;
+  --font-label-md: "Inter", sans-serif;
+  --font-label-sm: "Inter", sans-serif;
+  --font-code-mono: "Inter", monospace;
+
+  --spacing-gutter-xs: 0.25rem;
+  --spacing-gutter-sm: 0.5rem;
+  --spacing-gutter-md: 1rem;
+  --spacing-gutter-lg: 1.5rem;
+  --spacing-gutter-xl: 2rem;
+  --spacing-margin-mobile: 1.25rem;
+  --spacing-margin-tablet: 2.5rem;
+  --spacing-margin-desktop: 4rem;
+  --spacing-section-sm: 3rem;
+  --spacing-section-md: 5rem;
+  --spacing-section-lg: 8rem;
+  --spacing-max-container: 80rem;
+}
+
+@layer utilities {
+  .text-display-hero {
+    font-size: 64px;
+    line-height: 72px;
+    letter-spacing: -0.03em;
+    font-weight: 800;
+  }
+  @media (max-width: 768px) {
+    .text-display-hero {
+      font-size: 38px;
+      line-height: 44px;
+      letter-spacing: -0.02em;
+    }
+  }
+  .text-display-hero-mobile {
+    font-size: 38px;
+    line-height: 44px;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+  }
+  .text-headline-xl {
+    font-size: 44px;
+    line-height: 52px;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+  }
+  @media (max-width: 768px) {
+    .text-headline-xl {
+      font-size: 30px;
+      line-height: 38px;
+      letter-spacing: -0.02em;
+    }
+  }
+  .text-headline-xl-mobile {
+    font-size: 30px;
+    line-height: 38px;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+  .text-headline-lg {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+  .text-headline-md {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.015em;
+    font-weight: 600;
+  }
+  .text-headline-sm {
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+  }
+  .text-body-lead {
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: -0.005em;
+    font-weight: 400;
+  }
+  .text-body-md {
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: 0em;
+    font-weight: 400;
+  }
+  .text-body-sm {
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: 0.005em;
+    font-weight: 400;
+  }
+  .text-kicker-badge {
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: 0.14em;
+    font-weight: 700;
+  }
+  .text-label-md {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+    font-weight: 600;
+  }
+  .text-label-sm {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    font-weight: 500;
+  }
+  .text-code-mono {
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0em;
+    font-weight: 400;
+  }
+}
+
+/* Material Symbols alignment and sizing */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
