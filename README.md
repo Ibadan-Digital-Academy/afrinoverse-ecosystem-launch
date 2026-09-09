@@ -37,7 +37,7 @@ there is currently no backend, database, authentication, or secret runtime confi
 ### Installation
 
 ```bash
-git clone git@github.com:tolukusan/afrinoverse-ecosystem-launch.git
+git clone git@github.com:Ibadan-Digital-Academy/afrinoverse-ecosystem-launch.git
 cd afrinoverse-ecosystem-launch
 npm ci
 npm run dev
