@@ -24,7 +24,6 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({
   });
 
   const [errors, setErrors] = useState<Partial<Record<keyof PartnerFormData, string>>>({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   useEffect(() => {
@@ -69,12 +68,10 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({
     e.preventDefault();
     if (!validate()) return;
 
-    setIsSubmitting(true);
-    // Simulate professional transmission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-    }, 700);
+    const subject = `AFRINOVERSE Partnership Inquiry - ${formData.organization || 'Inquiry'}`;
+    const body = `Hello AFRINOVERSE Team,\n\nI am reaching out regarding ${formData.interest}.\n\nName: ${formData.fullName}\nOrganization: ${formData.organization}\nRole: ${formData.role}\n\nMessage:\n${formData.message}`;
+    window.location.href = `mailto:collaborate@afrinoverse.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setIsSubmitted(true);
   };
 
   return (
@@ -149,12 +146,11 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({
                   </div>
                   <div className="space-y-2">
                     <h4 className="font-headline-md text-headline-md text-on-surface">
-                      Inquiry Transmitted Successfully
+                      Inquiry Draft Prepared
                     </h4>
                     <p className="font-body-lead text-body-lead text-on-surface-variant max-w-lg mx-auto">
-                      Thank you for reaching out to AFRINOVERSE. Our ecosystem partnership
-                      directorate has received your details and will follow up within 24–48 business
-                      hours.
+                      Your email client should open with your inquiry addressed to the AFRINOVERSE
+                      partnership team. Review the draft and send it to complete your request.
                     </p>
                   </div>
 
@@ -393,20 +389,10 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({
 
                     <button
                       type="submit"
-                      disabled={isSubmitting}
-                      className="w-full sm:w-auto inline-flex items-center justify-center bg-secondary-container hover:bg-secondary text-on-primary font-label-md text-label-md px-7 py-3 rounded-lg shadow-sm transition-all disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer active:scale-[0.98]"
+                      className="w-full sm:w-auto inline-flex items-center justify-center bg-secondary-container hover:bg-secondary text-on-primary font-label-md text-label-md px-7 py-3 rounded-lg shadow-sm transition-all cursor-pointer active:scale-[0.98]"
                     >
-                      {isSubmitting ? (
-                        <>
-                          <span className="w-4 h-4 border-2 border-on-primary border-t-transparent rounded-full animate-spin mr-2" />
-                          Transmitting...
-                        </>
-                      ) : (
-                        <>
-                          Transmit Inquiry
-                          <Send className="w-4 h-4 ml-2" />
-                        </>
-                      )}
+                      Prepare Email
+                      <Send className="w-4 h-4 ml-2" />
                     </button>
                   </div>
                 </form>

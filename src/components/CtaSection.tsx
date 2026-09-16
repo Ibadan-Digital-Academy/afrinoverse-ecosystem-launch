@@ -9,11 +9,17 @@ interface CtaSectionProps {
 export const CtaSection: React.FC<CtaSectionProps> = ({onOpenPartner}) => {
   const [copied, setCopied] = useState(false);
 
-  const handleCopyEmail = (e: React.MouseEvent) => {
+  const handleCopyEmail = async (e: React.MouseEvent) => {
     e.stopPropagation();
-    navigator.clipboard.writeText('collaborate@afrinoverse.com');
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    if (!navigator.clipboard) return;
+
+    try {
+      await navigator.clipboard.writeText('collaborate@afrinoverse.com');
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      setCopied(false);
+    }
   };
 
   return (
@@ -72,10 +78,7 @@ export const CtaSection: React.FC<CtaSectionProps> = ({onOpenPartner}) => {
             </button>
 
             {/* Direct Inquiries Card with Copy & Mailto */}
-            <div
-              onClick={() => onOpenPartner('Direct Email Inquiry')}
-              className="p-4 bg-inverse-surface/60 hover:bg-inverse-surface/80 rounded-lg border border-outline-variant/20 transition-all cursor-pointer group flex items-center justify-between"
-            >
+            <div className="p-4 bg-inverse-surface/60 rounded-lg border border-outline-variant/20 flex items-center justify-between">
               <div>
                 <span className="font-code-mono text-code-mono text-on-primary-container block mb-1">
                   DIRECT INQUIRIES
