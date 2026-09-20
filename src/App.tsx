@@ -46,36 +46,37 @@ export default function App() {
       <Navbar onOpenPartner={handleOpenPartner} />
 
       {/* Main Content Area */}
-      <main className="w-full pt-20 bg-surface min-h-[calc(100vh-20rem)]">
+      <main className="w-full pt-[72px] bg-surface min-h-[calc(100vh-20rem)]">
         <div className="flex flex-col w-full">
           {/* HERO SECTION */}
           <Hero onOpenPartner={() => handleOpenPartner('Hero Primary CTA')} />
 
           {/* SECTION 01: ONE ECOSYSTEM. MANY ENGINES */}
-          <EcosystemSection onOpenPartner={handleOpenPartner} />
-
-          {/* SECTION 02: WHAT WE BUILD */}
-          <WhatWeBuildSection />
-
-          {/* SECTION 03: OUR PRODUCTS */}
-          <ProductsSection onSelectProduct={handleSelectProduct} />
-
-          {/* SECTION 04: INNOVATION LAB & VENTURE BUILDING */}
-          <InnovationLabSection onOpenPartner={handleOpenPartner} />
-
-          {/* SECTION 05: WHY AFRINOVERSE */}
-          <WhyAfrinoverseSection />
-
-          {/* SECTION 06: BUILDING FROM EXPERIENCE */}
+          {/* SECTION 02: WHO WE ARE */}
           <ExperienceSection />
 
-          {/* SECTION 07: WHO WE SERVE */}
+          {/* SECTION 03: OUR ECOSYSTEM */}
+          <EcosystemSection onOpenPartner={handleOpenPartner} />
+
+          {/* SECTION 04: WHAT WE BUILD */}
+          <WhatWeBuildSection />
+
+          {/* SECTION 05: OUR PRODUCTS */}
+          <ProductsSection onSelectProduct={handleSelectProduct} />
+
+          {/* SECTION 06: INNOVATION LAB & VENTURE BUILDING */}
+          <InnovationLabSection onOpenPartner={handleOpenPartner} />
+
+          {/* SECTION 07: WHY AFRINOVERSE */}
+          <WhyAfrinoverseSection />
+
+          {/* SECTION 08: WHO WE SERVE */}
           <WhoWeServeSection onOpenPartner={handleOpenPartner} />
 
-          {/* SECTION 08: OUR VISION */}
+          {/* SECTION 09: OUR VISION */}
           <VisionSection />
 
-          {/* SECTION 09: BUILD THE FUTURE TOGETHER (CTA) */}
+          {/* SECTION 10: BUILD THE FUTURE TOGETHER */}
           <CtaSection onOpenPartner={handleOpenPartner} />
         </div>
       </main>

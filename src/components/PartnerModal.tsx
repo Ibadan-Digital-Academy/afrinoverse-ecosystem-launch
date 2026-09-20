@@ -95,7 +95,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({
             animate={{opacity: 1, scale: 1, y: 0}}
             exit={{opacity: 0, scale: 0.96, y: 16}}
             transition={{duration: 0.25, ease: [0.16, 1, 0.3, 1]}}
-            className="relative w-full max-w-2xl bg-surface-container-lowest rounded-xl border border-outline-variant/50 shadow-2xl overflow-hidden z-10 my-auto"
+            className="relative w-full max-w-2xl bg-surface-container-lowest rounded-[28px] border border-outline-variant/40 shadow-2xl overflow-hidden z-10 my-auto"
             role="dialog"
             aria-modal="true"
             aria-labelledby="partner-modal-title"
@@ -174,7 +174,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({
                     <button
                       type="button"
                       onClick={onClose}
-                      className="inline-flex items-center justify-center bg-primary-container text-on-primary font-label-md text-label-md px-6 py-3 rounded-lg hover:bg-inverse-surface transition-all"
+                      className="inline-flex items-center justify-center bg-primary-container text-on-primary font-label-md text-label-md px-6 py-3 rounded-full hover:bg-inverse-surface transition-all"
                     >
                       Return to Website
                     </button>
@@ -201,7 +201,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({
                           value={formData.fullName}
                           onChange={(e) => setFormData({...formData, fullName: e.target.value})}
                           placeholder="e.g. Dr. Adebayo Ogunlesi"
-                          className={`w-full pl-9 pr-3 py-2.5 text-body-md rounded-lg border bg-surface text-on-surface focus:outline-none focus:ring-2 transition-colors ${
+                          className={`w-full pl-9 pr-3 py-2.5 text-body-md rounded-xl border bg-surface text-on-surface focus:outline-none focus:ring-2 transition-colors ${
                             errors.fullName
                               ? 'border-error focus:ring-error'
                               : 'border-outline-variant focus:border-secondary focus:ring-secondary/20'
@@ -231,7 +231,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({
                           value={formData.email}
                           onChange={(e) => setFormData({...formData, email: e.target.value})}
                           placeholder="name@organization.com"
-                          className={`w-full pl-9 pr-3 py-2.5 text-body-md rounded-lg border bg-surface text-on-surface focus:outline-none focus:ring-2 transition-colors ${
+                          className={`w-full pl-9 pr-3 py-2.5 text-body-md rounded-xl border bg-surface text-on-surface focus:outline-none focus:ring-2 transition-colors ${
                             errors.email
                               ? 'border-error focus:ring-error'
                               : 'border-outline-variant focus:border-secondary focus:ring-secondary/20'
@@ -263,7 +263,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({
                           value={formData.organization}
                           onChange={(e) => setFormData({...formData, organization: e.target.value})}
                           placeholder="e.g. Pan-African Venture Hub"
-                          className={`w-full pl-9 pr-3 py-2.5 text-body-md rounded-lg border bg-surface text-on-surface focus:outline-none focus:ring-2 transition-colors ${
+                          className={`w-full pl-9 pr-3 py-2.5 text-body-md rounded-xl border bg-surface text-on-surface focus:outline-none focus:ring-2 transition-colors ${
                             errors.organization
                               ? 'border-error focus:ring-error'
                               : 'border-outline-variant focus:border-secondary focus:ring-secondary/20'
@@ -358,7 +358,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({
                         value={formData.message}
                         onChange={(e) => setFormData({...formData, message: e.target.value})}
                         placeholder="Tell us about your organization's goals, geographic focus, and how AFRINOVERSE can build alongside you..."
-                        className={`w-full p-3 text-body-md rounded-lg border bg-surface text-on-surface focus:outline-none focus:ring-2 transition-colors ${
+                        className={`w-full p-3 text-body-md rounded-xl border bg-surface text-on-surface focus:outline-none focus:ring-2 transition-colors ${
                           errors.message
                             ? 'border-error focus:ring-error'
                             : 'border-outline-variant focus:border-secondary focus:ring-secondary/20'
@@ -389,7 +389,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({
 
                     <button
                       type="submit"
-                      className="w-full sm:w-auto inline-flex items-center justify-center bg-secondary-container hover:bg-secondary text-on-primary font-label-md text-label-md px-7 py-3 rounded-lg shadow-sm transition-all cursor-pointer active:scale-[0.98]"
+                      className="w-full sm:w-auto inline-flex items-center justify-center bg-secondary-container hover:bg-secondary text-on-primary font-label-md text-label-md px-7 py-3 rounded-full transition-all cursor-pointer active:scale-[0.98]"
                     >
                       Prepare Email
                       <Send className="w-4 h-4 ml-2" />

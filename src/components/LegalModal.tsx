@@ -37,7 +37,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({type, isOpen, onClose}) =
             animate={{opacity: 1, scale: 1, y: 0}}
             exit={{opacity: 0, scale: 0.95, y: 16}}
             transition={{duration: 0.25}}
-            className="relative w-full max-w-2xl bg-surface-container-lowest rounded-xl border border-outline-variant/50 shadow-2xl overflow-hidden z-10 my-auto"
+            className="relative w-full max-w-2xl bg-surface-container-lowest rounded-[28px] border border-outline-variant/40 shadow-2xl overflow-hidden z-10 my-auto"
             role="dialog"
             aria-modal="true"
             aria-labelledby="legal-modal-title"

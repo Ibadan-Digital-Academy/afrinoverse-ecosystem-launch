@@ -44,7 +44,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
             animate={{opacity: 1, scale: 1, y: 0}}
             exit={{opacity: 0, scale: 0.95, y: 16}}
             transition={{duration: 0.25, ease: [0.16, 1, 0.3, 1]}}
-            className="relative w-full max-w-3xl bg-surface-container-lowest rounded-xl border border-outline-variant/50 shadow-2xl overflow-hidden z-10 my-auto"
+            className="relative w-full max-w-3xl bg-surface-container-lowest rounded-[28px] border border-outline-variant/40 shadow-2xl overflow-hidden z-10 my-auto"
             role="dialog"
             aria-modal="true"
             aria-labelledby="product-detail-title"
@@ -104,7 +104,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 {product.features.map((feature, idx) => (
                   <div
                     key={idx}
-                    className="p-4 rounded-lg bg-surface-container-low border border-outline-variant/30"
+                    className="p-5 rounded-2xl bg-surface-container-low border border-outline-variant/30"
                   >
                     <span className="font-label-md text-label-md text-on-surface font-semibold block mb-1">
                       {feature.title}
@@ -165,7 +165,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   onClose();
                   onRequestPartner(`${product.name} Enterprise Deployment`);
                 }}
-                className="w-full sm:w-auto inline-flex items-center justify-center bg-secondary-container hover:bg-secondary text-on-primary font-label-md text-label-md px-6 py-3 rounded-lg shadow-sm transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center bg-secondary-container hover:bg-secondary text-on-primary font-label-md text-label-md px-6 py-3 rounded-full transition-all"
               >
                 Request Deployment / Demo
                 <ArrowRight className="w-4 h-4 ml-2" />
