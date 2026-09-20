@@ -13,6 +13,11 @@ export const WhoWeServeSection: React.FC<WhoWeServeSectionProps> = ({onOpenPartn
         <h2 className="mt-4 font-headline-xl text-headline-xl text-on-surface">Built for the people building Africa.</h2>
         <p className="mt-5 font-body-lead text-body-lead text-on-surface-variant">We work with:</p>
       </div>
+      <img
+        src="/afrinoverse-community.png"
+        alt="A diverse group of African learners, professionals, creators and founders together"
+        className="mt-10 h-[300px] w-full rounded-3xl object-cover object-center md:h-[440px]"
+      />
       <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {audiences.map((audience, index) => (
           <button key={audience} type="button" onClick={() => onOpenPartner(`Audience: ${audience}`)} className="group flex min-h-32 flex-col justify-between rounded-2xl border border-outline-variant bg-surface-container-lowest p-5 text-left hover:border-secondary">

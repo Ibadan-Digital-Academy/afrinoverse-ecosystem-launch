@@ -13,15 +13,16 @@ export const ExperienceSection: React.FC = () => (
           We believe sustainable transformation happens when people, institutions, technology and opportunity work together.
         </p>
       </div>
-      <div className="relative min-h-[320px] overflow-hidden rounded-3xl bg-primary-container p-8 text-on-primary md:p-12">
-        <div className="absolute right-[-4rem] top-[-4rem] h-56 w-56 rounded-full border-[32px] border-secondary-container/80" />
-        <div className="absolute bottom-[-5rem] left-[-3rem] h-64 w-64 rounded-full border-[22px] border-secondary/70" />
-        <div className="relative flex h-full flex-col justify-between">
-          <img src="/favicon.jpg" alt="Afrinoverse mark" className="h-16 w-16 rounded-full bg-white object-contain p-2" />
-          <div className="mt-16 max-w-sm">
-            <p className="font-headline-md text-headline-md">People, institutions, technology and opportunity—connected.</p>
-            <div className="mt-6 h-1 w-20 bg-secondary-container" />
-          </div>
+      <div className="relative min-h-[340px] overflow-hidden rounded-3xl bg-primary-container md:min-h-[440px]">
+        <img
+          src="/afrinoverse-team-collaboration.png"
+          alt="African professionals collaborating around laptops in an Afrinoverse-inspired workspace"
+          className="absolute inset-0 h-full w-full object-cover object-center"
+        />
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary-container/90 to-transparent p-7 pt-24 text-on-primary md:p-9 md:pt-28">
+          <p className="max-w-md font-headline-sm text-headline-sm">
+            People, institutions, technology and opportunity—connected.
+          </p>
         </div>
       </div>
     </div>
