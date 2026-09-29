@@ -334,6 +334,9 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({
                       <option value="Innovation Lab & Venture Incubation">
                         Innovation Lab & Venture Spinouts
                       </option>
+                      <option value="Coworking Space (Workspace Rental)">
+                        Coworking Space (Workspace Rental)
+                      </option>
                       <option value="Government & Multilateral Initiatives">
                         Government & Multilateral Programs
                       </option>

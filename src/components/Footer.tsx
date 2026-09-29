@@ -7,6 +7,7 @@ const links = [
   {label: 'Our Ecosystem', href: '#ecosystem'},
   {label: 'Products', href: '#products'},
   {label: 'Innovation Lab', href: '#innovation-lab'},
+  {label: 'Coworking', href: '#coworking'},
   {label: 'Who We Serve', href: '#who-we-serve'},
 ];
 
@@ -31,7 +32,7 @@ export const Footer: React.FC<FooterProps> = ({onOpenPartner, onOpenLegal}) => (
           <button type="button" onClick={() => onOpenLegal('terms')} className="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary">Terms of Service</button>
         </div>
       </div>
-      <p className="pt-6 font-body-sm text-body-sm text-on-primary-container">© 2025 AFRINOVERSE. All rights reserved.</p>
+      <p className="pt-6 font-body-sm text-body-sm text-on-primary-container">© {new Date().getFullYear()} AFRINOVERSE. All rights reserved.</p>
     </div>
   </footer>
 );

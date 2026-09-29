@@ -8,6 +8,7 @@ const navLinks = [
   {label: 'Our Ecosystem', href: '#ecosystem'},
   {label: 'Products', href: '#products'},
   {label: 'Innovation Lab', href: '#innovation-lab'},
+  {label: 'Coworking', href: '#coworking'},
 ];
 
 export const Navbar: React.FC<NavbarProps> = ({onOpenPartner}) => {
