@@ -1,33 +1,22 @@
-# Stage 1: Build the React application
-FROM node:20-alpine AS builder
+FROM node:20-alpine
 
 # Set working directory
 WORKDIR /app
 
-# Install dependencies using npm ci for deterministic builds
+# Install dependencies
 COPY package.json package-lock.json ./
 RUN npm ci
 
-# Copy the rest of the source code
+# Copy the source code and build the Vite project
 COPY . .
-
-# Build the Vite project for production
 RUN npm run build
 
-# Stage 2: Serve the application using Nginx
-FROM nginx:alpine
+# Install the 'serve' package globally
+RUN npm install -g serve
 
-# Remove default Nginx static assets
-RUN rm -rf /usr/share/nginx/html/*
+# Expose port 3000 to Dokploy
+EXPOSE 3000
 
-# Copy the custom Nginx configuration
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-# Copy the built assets from the builder stage
-COPY --from=builder /app/dist /usr/share/nginx/html
-
-# Expose port 80 to Dokploy
-EXPOSE 80
-
-# Start Nginx in the foreground
-CMD ["nginx", "-g", "daemon off;"]
+# Start the server targeting the dist folder 
+# The -s flag tells it to act as a Single Page Application (fallback to index.html)
+CMD ["serve", "-s", "dist", "-l", "3000"]
