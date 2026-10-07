@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  afrinoverse-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: afrinoverse-web
+    ports:
+      - "3000:80"
+    restart: unless-stopped
