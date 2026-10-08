@@ -9,7 +9,10 @@ describe('App', () => {
     expect(screen.getAllByText(/Afrinoverse/i).length).toBeGreaterThan(0);
     expect(screen.getByRole('main')).toBeInTheDocument();
     expect(
-      screen.getByRole('heading', {level: 1, name: /Building Systems for Africa's Next Generation/i}),
+      screen.getByRole('heading', {
+        level: 1,
+        name: /Building Systems for Africa's Next Generation/i,
+      }),
     ).toBeInTheDocument();
     expect(screen.getByRole('link', {name: 'Explore the Ecosystem'})).toHaveAttribute(
       'href',
