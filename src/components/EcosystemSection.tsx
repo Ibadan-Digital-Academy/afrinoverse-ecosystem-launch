@@ -1,9 +1,4 @@
 import React from 'react';
-import {ArrowRight} from 'lucide-react';
-
-interface EcosystemSectionProps {
-  onOpenPartner: (track: string) => void;
-}
 
 const engines = [
   [
@@ -44,7 +39,7 @@ const engines = [
   ],
 ];
 
-export const EcosystemSection: React.FC<EcosystemSectionProps> = ({onOpenPartner}) => (
+export const EcosystemSection: React.FC = () => (
   <section id="ecosystem" className="scroll-mt-20 bg-surface-container-low py-section-lg">
     <div className="mx-auto max-w-max-container px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
       <div className="max-w-3xl">
@@ -70,19 +65,6 @@ export const EcosystemSection: React.FC<EcosystemSectionProps> = ({onOpenPartner
               <h3 className="mt-16 font-headline-md text-headline-md">{title}</h3>
               <p className="mt-4 max-w-sm font-body-md text-body-md opacity-85">{description}</p>
             </div>
-            <button
-              type="button"
-              tabIndex={0}
-              aria-label={`Explore partnership opportunities for ${title}`}
-              onClick={() => onOpenPartner(`${title} (${category})`)}
-              onKeyDown={(event) => {
-                if (event.key === 'Enter' || event.key === ' ')
-                  onOpenPartner(`${title} (${category})`);
-              }}
-              className="mt-8 inline-flex w-fit items-center font-label-md text-label-md underline underline-offset-4"
-            >
-              Explore <ArrowRight className="ml-2 h-4 w-4" />
-            </button>
           </article>
         ))}
       </div>

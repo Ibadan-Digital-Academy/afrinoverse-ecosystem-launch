@@ -1,44 +1,8 @@
 import React from 'react';
 import {ArrowRight} from 'lucide-react';
-import {PRODUCTS_DATA} from '../data/afrinoverseData';
-import {ProductItem} from '../types';
+import {PRODUCT_CATALOG} from '../data/productCatalog';
 
-interface ProductsSectionProps {
-  onSelectProduct: (product: ProductItem) => void;
-}
-
-const digitalToolPro: ProductItem = {
-  id: 'digital-toolpro',
-  name: 'Digital ToolPro',
-  badge: 'PRODUCTIVITY & TRANSFORMATION',
-  version: 'DIGITAL PRODUCTIVITY',
-  category: 'Business productivity and workflow solutions',
-  metrics: 'Operational efficiency',
-  status: 'Product presentation',
-  imageUrl: '/favicon.jpg',
-  imageAlt: 'Afrinoverse mark',
-  description:
-    'Digital productivity and business solutions designed to improve operational efficiency, workflow automation and digital transformation.',
-  features: [
-    {
-      title: 'Workflow automation',
-      description: 'Simplify recurring work and operational handoffs.',
-    },
-    {
-      title: 'Digital transformation',
-      description: 'Help organisations move from manual processes to practical digital tools.',
-    },
-  ],
-  highlights: [
-    'Operational workflow automation',
-    'Business productivity tools',
-    'Practical digital transformation support',
-  ],
-};
-
-const products = [PRODUCTS_DATA[0], PRODUCTS_DATA[1], digitalToolPro];
-
-export const ProductsSection: React.FC<ProductsSectionProps> = ({onSelectProduct}) => (
+export const ProductsSection: React.FC = () => (
   <section id="products" className="scroll-mt-20 bg-surface-container-low py-section-lg">
     <div className="mx-auto max-w-max-container px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
       <div className="max-w-3xl">
@@ -48,7 +12,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({onSelectProduct
         </h2>
       </div>
       <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-3">
-        {products.map((product) => (
+        {PRODUCT_CATALOG.map((product) => (
           <article
             key={product.id}
             className="flex flex-col rounded-3xl bg-surface-container-lowest p-7 shadow-sm"
@@ -77,13 +41,14 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({onSelectProduct
                   ? 'A platform supporting vocational skills, creative entrepreneurship, fashion innovation and order workflows.'
                   : product.description}
             </p>
-            <button
-              type="button"
-              onClick={() => onSelectProduct(product)}
-              className="mt-7 inline-flex w-fit items-center font-label-md text-label-md text-secondary underline underline-offset-4"
-            >
-              Explore {product.name} <ArrowRight className="ml-2 h-4 w-4" />
-            </button>
+            {product.websiteUrl ? (
+              <a
+                href={product.websiteUrl}
+                className="mt-7 inline-flex w-fit items-center font-label-md text-label-md text-secondary underline underline-offset-4"
+              >
+                Explore {product.name} <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
+              </a>
+            ) : null}
           </article>
         ))}
       </div>

@@ -49,7 +49,7 @@ export const Footer: React.FC<FooterProps> = ({onOpenPartner, onOpenLegal}) => (
             onClick={() => onOpenPartner('General Inquiry')}
             className="text-left font-body-md text-body-md text-on-primary hover:text-secondary-fixed-dim"
           >
-            Contact / Partner
+            Partner With Us
           </button>
         </nav>
         <div className="flex flex-col items-start gap-3 md:items-end">

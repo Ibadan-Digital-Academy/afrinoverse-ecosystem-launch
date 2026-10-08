@@ -20,16 +20,42 @@ describe('App', () => {
     );
   });
 
-  it('opens the existing partnership dialog from a keyboard-accessible ecosystem card', () => {
+  it('keeps informational cards out of the partnership form', () => {
     render(<App />);
-
-    const academyCard = screen.getByRole('button', {
-      name: 'Explore partnership opportunities for Ibadan Digital Academy',
-    });
-    expect(academyCard).toHaveAttribute('tabindex', '0');
-
-    fireEvent.keyDown(academyCard, {key: 'Enter'});
-
-    expect(screen.getByRole('dialog', {name: 'Partner With AFRINOVERSE'})).toBeInTheDocument();
+    expect(screen.getByRole('heading', {name: 'Ibadan Digital Academy'})).toBeInTheDocument();
+    expect(screen.getByText('Learners & Students')).toBeInTheDocument();
+    expect(
+      screen.queryByRole('button', {name: /Explore partnership opportunities/}),
+    ).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', {name: 'Learners & Students'})).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', {name: 'Explore Innovation Lab'})).not.toBeInTheDocument();
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });
+
+  it('leaves FairwayPro informational', () => {
+    render(<App />);
+    expect(screen.getByRole('heading', {name: 'FairwayPro'})).toBeInTheDocument();
+    expect(screen.queryByRole('button', {name: 'Explore FairwayPro'})).not.toBeInTheDocument();
+    expect(screen.queryByRole('link', {name: 'Explore FairwayPro'})).not.toBeInTheDocument();
+  });
+
+  it.each([
+    ['StitchPro', 'https://stitchpro.com.ng/'],
+    ['Digital ToolPro', 'https://digitaltools.ng/'],
+  ])('links %s directly to its website', (name, url) => {
+    render(<App />);
+    const link = screen.getByRole('link', {name: 'Explore ' + name});
+    expect(link).toHaveAttribute('href', url);
+    fireEvent.click(link);
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+  });
+
+  it.each(['Partner With Us', 'Partner With AFRINOVERSE'])(
+    'opens the partnership form from %s',
+    (name) => {
+      render(<App />);
+      fireEvent.click(screen.getAllByRole('button', {name})[0]);
+      expect(screen.getByRole('dialog', {name: 'Partner With AFRINOVERSE'})).toBeInTheDocument();
+    },
+  );
 });

@@ -1,9 +1,4 @@
 import React from 'react';
-import {ArrowRight} from 'lucide-react';
-
-interface WhoWeServeSectionProps {
-  onOpenPartner: (track: string) => void;
-}
 
 const audiences = [
   'Learners & Students',
@@ -16,7 +11,7 @@ const audiences = [
   'Government & Development Organisations',
 ];
 
-export const WhoWeServeSection: React.FC<WhoWeServeSectionProps> = ({onOpenPartner}) => (
+export const WhoWeServeSection: React.FC = () => (
   <section id="who-we-serve" className="scroll-mt-20 bg-surface-container-low py-section-lg">
     <div className="mx-auto max-w-max-container px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
       <div className="max-w-3xl">
@@ -28,18 +23,15 @@ export const WhoWeServeSection: React.FC<WhoWeServeSectionProps> = ({onOpenPartn
       </div>
       <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {audiences.map((audience, index) => (
-          <button
+          <article
             key={audience}
-            type="button"
-            onClick={() => onOpenPartner(`Audience: ${audience}`)}
-            className="group flex min-h-32 flex-col justify-between rounded-2xl border border-outline-variant bg-surface-container-lowest p-5 text-left hover:border-secondary"
+            className="flex min-h-32 flex-col justify-between rounded-2xl border border-outline-variant bg-surface-container-lowest p-5 text-left"
           >
             <span className="font-code-mono text-code-mono text-secondary">0{index + 1}</span>
-            <span className="mt-6 font-headline-sm text-headline-sm text-on-surface group-hover:text-secondary">
+            <span className="mt-6 font-headline-sm text-headline-sm text-on-surface">
               {audience}
             </span>
-            <ArrowRight className="mt-4 h-4 w-4 text-secondary" />
-          </button>
+          </article>
         ))}
       </div>
     </div>

@@ -1,11 +1,6 @@
 import React from 'react';
-import {ArrowRight} from 'lucide-react';
 
-interface InnovationLabSectionProps {
-  onOpenPartner: (track: string) => void;
-}
-
-export const InnovationLabSection: React.FC<InnovationLabSectionProps> = ({onOpenPartner}) => (
+export const InnovationLabSection: React.FC = () => (
   <section
     id="innovation-lab"
     className="scroll-mt-20 bg-secondary-container py-section-lg text-on-primary"
@@ -25,13 +20,6 @@ export const InnovationLabSection: React.FC<InnovationLabSectionProps> = ({onOpe
           <span aria-hidden="true">→</span> venture <span aria-hidden="true">→</span> growth.
         </p>
       </div>
-      <button
-        type="button"
-        onClick={() => onOpenPartner('Innovation Lab & Venture Building')}
-        className="inline-flex w-fit items-center rounded-full bg-primary-container px-6 py-4 font-label-md text-label-md text-on-primary hover:bg-primary lg:col-span-4"
-      >
-        Explore Innovation Lab <ArrowRight className="ml-2 h-4 w-4" />
-      </button>
     </div>
   </section>
 );
