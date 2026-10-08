@@ -17,6 +17,7 @@ export interface BuildStage {
 }
 
 export interface ProductItem {
+  websiteUrl?: string;
   id: string;
   name: string;
   badge: string;

@@ -17,23 +17,16 @@ import {VisionSection} from './components/VisionSection';
 import {CtaSection} from './components/CtaSection';
 import {Footer} from './components/Footer';
 import {PartnerModal} from './components/PartnerModal';
-import {ProductDetailModal} from './components/ProductDetailModal';
 import {LegalModal} from './components/LegalModal';
-import {ProductItem} from './types';
 
 export default function App() {
   const [isPartnerModalOpen, setIsPartnerModalOpen] = useState(false);
   const [partnerTrack, setPartnerTrack] = useState('General Ecosystem Partnership');
-  const [selectedProduct, setSelectedProduct] = useState<ProductItem | null>(null);
   const [legalModalType, setLegalModalType] = useState<'privacy' | 'terms' | null>(null);
 
   const handleOpenPartner = (track?: string) => {
     if (track) setPartnerTrack(track);
     setIsPartnerModalOpen(true);
-  };
-
-  const handleSelectProduct = (product: ProductItem) => {
-    setSelectedProduct(product);
   };
 
   const handleOpenLegal = (type: 'privacy' | 'terms') => {
@@ -56,22 +49,22 @@ export default function App() {
           <ExperienceSection />
 
           {/* SECTION 03: OUR ECOSYSTEM */}
-          <EcosystemSection onOpenPartner={handleOpenPartner} />
+          <EcosystemSection />
 
           {/* SECTION 04: WHAT WE BUILD */}
           <WhatWeBuildSection />
 
           {/* SECTION 05: OUR PRODUCTS */}
-          <ProductsSection onSelectProduct={handleSelectProduct} />
+          <ProductsSection />
 
           {/* SECTION 06: INNOVATION LAB & VENTURE BUILDING */}
-          <InnovationLabSection onOpenPartner={handleOpenPartner} />
+          <InnovationLabSection />
 
           {/* SECTION 07: WHY AFRINOVERSE */}
           <WhyAfrinoverseSection />
 
           {/* SECTION 08: WHO WE SERVE */}
-          <WhoWeServeSection onOpenPartner={handleOpenPartner} />
+          <WhoWeServeSection />
 
           {/* SECTION 09: OUR VISION */}
           <VisionSection />
@@ -89,13 +82,6 @@ export default function App() {
         isOpen={isPartnerModalOpen}
         onClose={() => setIsPartnerModalOpen(false)}
         defaultInterest={partnerTrack}
-      />
-
-      <ProductDetailModal
-        product={selectedProduct}
-        isOpen={!!selectedProduct}
-        onClose={() => setSelectedProduct(null)}
-        onRequestPartner={(track) => handleOpenPartner(track)}
       />
 
       <LegalModal
