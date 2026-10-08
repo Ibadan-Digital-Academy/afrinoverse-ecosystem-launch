@@ -10,6 +10,7 @@ import {EcosystemSection} from './components/EcosystemSection';
 import {WhatWeBuildSection} from './components/WhatWeBuildSection';
 import {ProductsSection} from './components/ProductsSection';
 import {InnovationLabSection} from './components/InnovationLabSection';
+import {CoworkingSection} from './components/CoworkingSection';
 import {WhyAfrinoverseSection} from './components/WhyAfrinoverseSection';
 import {ExperienceSection} from './components/ExperienceSection';
 import {WhoWeServeSection} from './components/WhoWeServeSection';
@@ -59,6 +60,9 @@ export default function App() {
 
           {/* SECTION 06: INNOVATION LAB & VENTURE BUILDING */}
           <InnovationLabSection />
+
+          {/* SECTION 06B: COWORKING SPACE */}
+          <CoworkingSection onOpenPartner={handleOpenPartner} />
 
           {/* SECTION 07: WHY AFRINOVERSE */}
           <WhyAfrinoverseSection />

@@ -10,6 +10,7 @@ const links = [
   {label: 'Our Ecosystem', href: '#ecosystem'},
   {label: 'Products', href: '#products'},
   {label: 'Innovation Lab', href: '#innovation-lab'},
+  {label: 'Coworking', href: '#coworking'},
   {label: 'Who We Serve', href: '#who-we-serve'},
 ];
 
@@ -69,7 +70,7 @@ export const Footer: React.FC<FooterProps> = ({onOpenPartner, onOpenLegal}) => (
         </div>
       </div>
       <p className="pt-6 font-body-sm text-body-sm text-on-primary-container">
-        © 2025 AFRINOVERSE. All rights reserved.
+        © {new Date().getFullYear()} AFRINOVERSE. All rights reserved.
       </p>
     </div>
   </footer>
